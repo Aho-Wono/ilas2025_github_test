@@ -171,7 +171,6 @@ while True:
         else:
             break
 
-
     url = f"https://weather.tsukumijima.net/api/forecast/city/{message}"
 
     try: 
