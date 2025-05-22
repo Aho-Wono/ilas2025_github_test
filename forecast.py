@@ -178,6 +178,8 @@ while True:
         data = requests.get(url).json() # json形式でデータを取得する
         #print(data)
 
+        print("=" * 40)
+        print(f"{DATA[message]} の天気予報をお伝えします")
         print("-" * 40)
         for forecast in data['forecasts']:
             date_label = forecast['dateLabel']       # 今日、明日など
@@ -191,8 +193,8 @@ while True:
             print(f"{date_label}（{date}）の天気予報：")
             print(f"  天気　　：{weather}")
             print(f"  風　　　：{wind}")
-            print(f"  最高気温：{temp_max if temp_max else '不明'} ℃")
-            print(f"  最低気温：{temp_min if temp_min else '不明'} ℃")
+            print(f"  最高気温：{temp_max if temp_max else '--'} 度")
+            print(f"  最低気温：{temp_min if temp_min else '--'} 度")
             print(f"  降水確率：")
 
             for time_range, prob in rain.items(): #
